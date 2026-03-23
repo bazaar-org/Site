@@ -1,0 +1,21 @@
+{
+  "name": "bazaar-site",
+  "version": "1.0.0",
+  "description": "Website for Bazaar app store",
+  "main": "index.js",
+  "scripts": {
+    "images": "mkdir -p assets/optimized && npx sharp -i assets/*.png -o assets/optimized/ -f avif --quality 80",
+    "dev": "concurrently \"npx @tailwindcss/cli -i input.css -o output.css --watch\" \"npx live-server --port=3000\"",
+    "build": "npx @tailwindcss/cli -i input.css -o output.css --minify"
+  },
+  "keywords": [],
+  "author": "Bazaar Developers",
+  "license": "GPL-3.0-only",
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.2.2",
+    "concurrently": "^9.1.2",
+    "live-server": "^1.2.2",
+    "sharp-cli": "^5.2.0",
+    "tailwindcss": "^4.2.2"
+  }
+}

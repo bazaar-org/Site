@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="output.css" rel="stylesheet">
+    <link rel="icon" href="favicon.ico">
+    <title>Bazaar</title>
+</head>
+
+<body class="bg-[#f6f5f4] text-[#2e3436] antialiased">
+
+    <div class="min-h-screen flex flex-col">
+        <!-- Hero -->
+        <div
+            class="bg-gradient-to-br from-[#FF7A6C] from-[62%] to-[#D45B61] to-[81%] overflow-hidden relative min-h-[400px] flex flex-col">
+            <div class="absolute inset-0 opacity-7"
+                style="background-image: url('assets/header-background.svg'); background-repeat: repeat; background-size: auto 200px; transform: rotate(-15deg) scale(2);">
+            </div>
+            <div class="max-w-4xl mx-auto px-8 w-full relative mt-auto pt-12 ">
+                <div class="relative pb-[55%]">
+                    <picture>
+                        <source srcset="assets/optimized/flathub.avif" type="image/avif">
+                        <img src="assets/flathub.png" alt="Bazaar" class="absolute top-0 left-0 w-full">
+                    </picture>
+                </div>
+            </div>
+        </div>
+
+        <!-- Info -->
+        <section class="flex-1 flex items-center justify-center px-6">
+            <div class="max-w-3xl mx-auto text-center py-12">
+                <img src="assets/logo.svg" alt="Bazaar" class="w-32 h-32 mx-auto mb-5">
+                <h1 class="text-4xl font-extrabold tracking-tight mb-1">Bazaar</h1>
+                <p class="text-lg text-[#77767b] max-w-xl mx-auto mb-8">
+                    Discover and install applications
+                </p>
+                <div class="flex gap-4 justify-center flex-wrap">
+                    <a href="https://flathub.org/en/apps/io.github.kolunmi.Bazaar"
+                        class="inline-block bg-[#1c71d8] text-white font-semibold px-8 py-3 rounded-full transition border-4 border-[#1c71d8] hover:shadow-[0_0_0_4px_#1c71d8,inset_0_0_0_4px_#1c71d8]">
+                        Get it on Flathub
+                    </a>
+                    <a href="https://ko-fi.com/kolunmi"
+                        class="inline-flex items-center gap-2 bg-[#f06292] text-white font-semibold px-8 py-3 rounded-full transition border-4 border-[#f06292] hover:shadow-[0_0_0_4px_#f06292,inset_0_0_0_4px_#f06292]">
+                        <img src="assets/heart-filled-symbolic.svg" class="w-5 h-5 invert brightness-0 invert" alt="">
+                        Support
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Flathub -->
+    <section class="max-w-5xl mx-auto px-6 py-16">
+        <div class="flex flex-col md:flex-row items-center gap-12">
+            <div class="md:w-1/2">
+                <picture>
+                    <source srcset="assets/optimized/flathub-2.avif" type="image/avif">
+                    <img src="assets/flathub.png" alt="Flathub Page" class="w-full">
+                </picture>
+            </div>
+            <div class="md:w-1/2">
+                <h2 class="text-3xl font-extrabold mb-4">Browse the way you want</h2>
+                <p class="text-[#77767b] text-lg leading-relaxed">Trying to find the perfect app? Bazaar has tons of
+                    ways to find what you want or what you didn't know you wanted. Scroll through Flathub, search
+                    through
+                    categories, or find similar apps through tags.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search -->
+    <section class="bg-white">
+        <div class="max-w-5xl mx-auto px-6 py-16">
+            <div class="flex flex-col md:flex-row-reverse items-center gap-12">
+                <div class="md:w-1/2">
+                    <picture>
+                        <source srcset="assets/optimized/search.avif" type="image/avif">
+                        <img src="assets/search.png" alt="Search Page" class="w-full">
+                    </picture>
+                </div>
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl font-extrabold mb-4">Find it fast</h2>
+                    <p class="text-[#77767b] text-lg leading-relaxed">Search across all your Flatpak remotes from one
+                        place.
+                        Results show up instantly with the ability to install apps right there and then.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Full view -->
+    <section class="max-w-5xl mx-auto px-6 py-16">
+        <div class="flex flex-col md:flex-row items-center gap-12">
+            <div class="md:w-1/2">
+                <picture>
+                    <source srcset="assets/optimized/fullview.avif" type="image/avif">
+                    <img src="assets/fullview.png" alt="App detail page" class="w-full">
+                </picture>
+            </div>
+            <div class="md:w-1/2">
+                <h2 class="text-3xl font-extrabold mb-4">View it all</h2>
+                <p class="text-[#77767b] text-lg leading-relaxed">Screenshots, descriptions, download stats, and
+                    permissions. If app data is available, it is clearly presented on the app's page.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Library -->
+    <section class="bg-white">
+        <div class="max-w-5xl mx-auto px-6 py-16">
+            <div class="flex flex-col md:flex-row-reverse items-center gap-12">
+                <div class="md:w-1/2">
+                    <picture>
+                        <source srcset="assets/optimized/library.avif" type="image/avif">
+                        <img src="assets/library.png" alt="Library page" class="w-full">
+                    </picture>
+                </div>
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl font-extrabold mb-4">Your Library</h2>
+                    <p class="text-[#77767b] text-lg leading-relaxed">Manage everything you've installed. Apply updates,
+                        uninstall apps, see queued downloads and find add-ons all in one page.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="bg-gradient-to-br from-[#c6eaf8] from-[0%] to-[#c4f3ca] to-[50%] relative overflow-hidden">
+        <div class="max-w-2xl mx-auto px-6 py-20 text-center relative">
+            <h2 class="text-3xl font-extrabold mb-3 text-[#251f32]">Try It Out!</h2>
+            <p class="text-[#251f32]/70 text-lg mb-8">Have something to say after checking it out? Let us know on
+                <a href="https://github.com/kolunmi/bazaar/issues" class="underline hover:text-[#251f32]">GitHub</a>.
+            </p>
+            <div class="flex gap-4 justify-center flex-wrap">
+                <a href="https://flathub.org/en/apps/io.github.kolunmi.Bazaar"
+                    class="inline-block bg-[#251f32] text-white font-semibold px-8 py-3 rounded-full transition border-4 border-[#251f32] hover:shadow-[0_0_0_4px_#251f32,inset_0_0_0_4px_#251f32]">
+                    Get it on Flathub
+                </a>
+                <a href="https://github.com/kolunmi/bazaar"
+                    class="inline-block bg-[#251f32]/10 text-[#251f32] font-semibold px-8 py-3 rounded-full transition border-4 border-[#251f32]/30 hover:border-[#251f32]">
+                    Source Code
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-[#deddda] py-8 text-center text-sm text-[#77767b]">
+        <p>
+            Bazaar is free and open source software, licensed under the
+            <a href="https://github.com/kolunmi/bazaar/blob/main/COPYING"
+                class="underline hover:text-[#1c71d8]">GPL-3.0</a>.
+        </p>
+    </footer>
+
+</body>
+
+</html>
