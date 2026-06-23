@@ -94,7 +94,7 @@ Customize your login screen.
 
 > macOS-style text capture now also for GNOME: select any screen area, OCR it, copy instantly, optionally translate with this new extension https://extensions.gnome.org/extension/10209/snap-text-extractor/
 >
-> ![](https://thisweek.gnome.org/_astro/snap_text.B2deEQXo_Z1mgval.webp,card)
+> ![](https://thisweek.gnome.org/_astro/snap_text.B2deEQXo_Z1mgval.webp)
 
 **[Tomáš Gažovič](https://matrix.to/#@todevelopers:matrix.org) says**
 
