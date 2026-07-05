@@ -16,7 +16,7 @@ def build_document(app: App) -> str:
     return " ".join(parts)
 
 
-def find_similar_apps(apps: list[App], top_n: int = 6) -> dict[str, list[tuple[str, float]]]:
+def find_similar_apps(apps: list[App], top_n: int = 12) -> dict[str, list[tuple[str, float]]]:
     docs = [build_document(a) for a in apps]
     vectorizer = TfidfVectorizer(
         stop_words="english",

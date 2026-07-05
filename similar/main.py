@@ -10,7 +10,7 @@ def main(output_folder: str = "similar_apps", debug: bool = False):
     apps = fetch_apps()
     print(f"Fetched {len(apps)} apps")
     print("Computing similarity...")
-    similar = find_similar_apps(apps, top_n=6)
+    similar = find_similar_apps(apps, top_n=12)
     print("Similarity computation done")
 
     if debug:
