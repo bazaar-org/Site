@@ -41,7 +41,7 @@ def get_app_id(cpt) -> str:
     launchable = cpt.get_launchable(AppStream.LaunchableKind.DESKTOP_ID)
     if launchable:
         entries = launchable.get_entries()
-        if entries:
+        if entries and len(entries) == 1:
             entry = entries[0]
             if entry.endswith(".desktop"):
                 return entry[:-len(".desktop")]
