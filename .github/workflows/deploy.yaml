@@ -29,7 +29,7 @@ jobs:
       - name: Install system deps
         run: |
           sudo apt-get update
-          sudo apt-get install -y gir1.2-appstream-1.0 python3-gi gobject-introspection libgirepository1.0-dev
+          sudo apt-get install -y gir1.2-appstream-1.0 python3-gi gobject-introspection libgirepository1.0-dev libcairo2-dev pkg-config python3-dev
 
       - name: Install python deps
         run: pip install scikit-learn numpy PyGObject
