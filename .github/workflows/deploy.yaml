@@ -38,6 +38,9 @@ jobs:
         working-directory: similar
         run: python main.py --output-folder ../website/similar
 
+      - name: Debug output
+        run: ls -la website/similar
+
       - uses: actions/upload-pages-artifact@v3
         with:
           path: website
