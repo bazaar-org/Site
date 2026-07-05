@@ -30,6 +30,9 @@ def find_similar_apps(apps: list[App], top_n: int = 6) -> dict[str, list[tuple[s
     for i, app in enumerate(apps):
         row = sim_matrix[i].toarray().ravel()
         row[i] = -1
+        for j, other in enumerate(apps):
+            if other.developer_name and app.developer_name and other.developer_name == app.developer_name:
+                row[j] = -1
         top_indices = np.argpartition(row, -top_n)[-top_n:]
         top_indices = top_indices[np.argsort(row[top_indices])[::-1]]
         results[app.id] = [

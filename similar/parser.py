@@ -65,5 +65,5 @@ def fetch_apps() -> list[App]:
 
         pool = metadata.get_components()
         components = get_components_list(pool)
-
-    return [component_to_app(c) for c in components]
+    apps = [component_to_app(c) for c in components]
+    return [app for app in apps if app.kind == "desktop-app"]
