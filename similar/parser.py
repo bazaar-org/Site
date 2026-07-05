@@ -37,13 +37,23 @@ def get_components_list(pool):
     if hasattr(pool, "index"):
         return [pool.index(i) for i in range(pool.get_size())]
 
+def get_app_id(cpt) -> str:
+    launchable = cpt.get_launchable(AppStream.LaunchableKind.DESKTOP_ID)
+    if launchable:
+        entries = launchable.get_entries()
+        if entries:
+            entry = entries[0]
+            if entry.endswith(".desktop"):
+                return entry[:-len(".desktop")]
+            return entry
+    return cpt.get_id()
 
 def component_to_app(cpt) -> App:
     dev = cpt.get_developer()
     developer_name = dev.get_name() if dev else None
 
     return App(
-        id=cpt.get_id(),
+        id=get_app_id(cpt),
         kind=cpt.get_kind().value_nick if cpt.get_kind() else None,
         name=cpt.get_name(),
         summary=cpt.get_summary(),
