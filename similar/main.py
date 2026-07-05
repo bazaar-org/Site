@@ -1,3 +1,4 @@
+import argparse
 import json
 import os
 from parser import fetch_apps
@@ -30,4 +31,8 @@ def main(output_folder: str = "similar_apps", debug: bool = False):
 
 
 if __name__ == "__main__":
-    main()
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--output-folder", default="similar_apps")
+    parser.add_argument("--debug", action="store_true")
+    args = parser.parse_args()
+    main(output_folder=args.output_folder, debug=args.debug)
