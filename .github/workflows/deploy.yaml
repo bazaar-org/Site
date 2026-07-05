@@ -35,7 +35,8 @@ jobs:
         run: pip install scikit-learn numpy PyGObject
 
       - name: Generate similar apps
-        run: python main.py --output-folder website/similar
+        working-directory: similar
+        run: python main.py --output-folder ../website/similar
 
       - uses: actions/upload-pages-artifact@v3
         with:
