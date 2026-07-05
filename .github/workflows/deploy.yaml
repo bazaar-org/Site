@@ -39,7 +39,9 @@ jobs:
         run: python main.py --output-folder ../website/similar
 
       - name: Debug output
-        run: ls -la website/similar
+        run: |
+          pwd
+          find . -maxdepth 4 -not -path "./.git/*"
 
       - uses: actions/upload-pages-artifact@v3
         with:
