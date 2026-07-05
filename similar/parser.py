@@ -11,6 +11,11 @@ from gi.repository import AppStream, Gio
 
 APPSTREAM_URL = "https://dl.flathub.org/repo/appstream/x86_64/appstream.xml.gz"
 
+SKIP_IDS = {
+    "net.krafting.PleasureDVR",
+    "io.github.ladaapp.lada",
+}
+
 @dataclass
 class App:
     id: str
@@ -76,4 +81,4 @@ def fetch_apps() -> list[App]:
         pool = metadata.get_components()
         components = get_components_list(pool)
     apps = [component_to_app(c) for c in components]
-    return [app for app in apps if app.kind == "desktop-app"]
+    return [app for app in apps if app.kind == "desktop-app" and app.id not in SKIP_IDS]
