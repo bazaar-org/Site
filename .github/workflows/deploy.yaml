@@ -37,6 +37,10 @@ jobs:
       - name: Generate similar apps
         working-directory: similar
         run: python main.py --output-folder ../website/similar
+        
+      - name: Generate Flathub category info
+        working-directory: similar
+        run: python category-info.py --output-folder ../website/collection
 
       - name: Debug output
         run: |
