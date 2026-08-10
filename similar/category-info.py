@@ -115,17 +115,20 @@ def build_merged_index() -> dict:
 
     print("Fetching quality")
     for app_id in fetch_quality_passing_ids():
-        get_entry(app_id)["quality_passing"] = True
+        if app_id in merged:
+            merged[app_id]["quality_passing"] = True
     time.sleep(REQUEST_DELAY)
 
     print("Fetching KDE apps")
     for app_id in fetch_kde_ids():
-        get_entry(app_id)["kde"] = True
+        if app_id in merged:
+            merged[app_id]["kde"] = True
     time.sleep(REQUEST_DELAY)
 
     print("Fetching Adwaita")
     for app_id in fetch_gnome_ids():
-        get_entry(app_id)["gnome"] = True
+        if app_id in merged:
+            merged[app_id]["gnome"] = True
 
     return merged
 
