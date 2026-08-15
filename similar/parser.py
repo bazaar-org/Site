@@ -26,6 +26,7 @@ class App:
     categories: list = field(default_factory=list)
     keywords: list = field(default_factory=list)
     developer_name: str = None
+    extends: list = field(default_factory=list)
 
 
 def download_and_decompress(url: str, dest: Path):
@@ -66,6 +67,7 @@ def component_to_app(cpt) -> App:
         categories=list(cpt.get_categories()),
         keywords=list(cpt.get_keywords()) if cpt.get_keywords() else [],
         developer_name=developer_name,
+        extends=list(cpt.get_extends()) if cpt.get_extends() else [],
     )
 
 
@@ -73,12 +75,17 @@ def fetch_apps() -> list[App]:
     with tempfile.TemporaryDirectory() as tmp:
         xml_path = Path(tmp) / "appstream.xml"
         download_and_decompress(APPSTREAM_URL, xml_path)
-
+        
         metadata = AppStream.Metadata.new()
         metadata.set_format_style(AppStream.FormatStyle.CATALOG)
         metadata.parse_file(Gio.File.new_for_path(str(xml_path)), AppStream.FormatKind.XML)
-
+        
         pool = metadata.get_components()
         components = get_components_list(pool)
     apps = [component_to_app(c) for c in components]
-    return [app for app in apps if app.kind == "desktop-app" and app.id not in SKIP_IDS]
+    return [
+        app for app in apps
+        if app.kind == "desktop-app"
+        and not app.extends
+        and app.id not in SKIP_IDS
+    ]
