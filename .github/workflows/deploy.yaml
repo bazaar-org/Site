@@ -41,6 +41,10 @@ jobs:
       - name: Generate Flathub category info
         working-directory: similar
         run: python category-info.py --output-folder ../website/collection
+        
+      - name: Generate made-for-DE app lists
+        working-directory: similar
+        run: python made-for.py --output-folder ../website/made-for
 
       - name: Debug output
         run: |

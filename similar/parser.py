@@ -27,6 +27,7 @@ class App:
     keywords: list = field(default_factory=list)
     developer_name: str = None
     extends: list = field(default_factory=list)
+    provides: list = field(default_factory=list)
 
 
 def download_and_decompress(url: str, dest: Path):
@@ -54,6 +55,13 @@ def get_app_id(cpt) -> str:
             return entry
     return cpt.get_id()
 
+def get_provided_ids(cpt) -> list:
+    ids = []
+    for provided in cpt.get_provided():
+        if provided.get_kind() == AppStream.ProvidedKind.ID:
+            ids.extend(provided.get_items())
+    return ids
+
 def component_to_app(cpt) -> App:
     dev = cpt.get_developer()
     developer_name = dev.get_name() if dev else None
@@ -68,6 +76,7 @@ def component_to_app(cpt) -> App:
         keywords=list(cpt.get_keywords()) if cpt.get_keywords() else [],
         developer_name=developer_name,
         extends=list(cpt.get_extends()) if cpt.get_extends() else [],
+        provides=get_provided_ids(cpt),
     )
 
 
